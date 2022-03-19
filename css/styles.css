@@ -13,45 +13,38 @@ body {
     font-size: 1.2rem;
 }
 
-.nav {
-    background-color: #333620;
-    color: white;
-    text-align: center;
+nav {
     display: flex;
-    height: 90px;
-    width: 225px;
-    margin: 10px;
-    padding: 0;
-    border-style: none;
+    align-items: center;
 }
-a:link {
+
+#logo-container {
+    display: flex;
     color: white;
     text-decoration: none;
+    position: relative;
+    left: 10%;  
 }
 
-nav ul {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+#nav-button-container {
+    position: absolute;
+    right: 10%;
 }
 
-#logo {
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-button {
-    
-
-}
-
-
-
-#learnButton {
+.nav-button {
+    height: 50px;
+    width: 150px;
+    color: white;
+    background-color: #333620;
     border-style: solid;
-    border-color: white;
-    
+    border-width: 1px;
+    border-color: #333620;
+    margin: 10px;
+    font-size: large;
 
 }
+
+#current-page {
+    border-color: white;
+}
+
