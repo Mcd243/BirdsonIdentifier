@@ -23,6 +23,36 @@ button {
     border-style: solid;
 }
 
+/*Index page*/
+#index-body {
+    display: grid;
+    
+}
+
+#index-header {
+
+    margin-left: 35%;
+    margin-right: 35%;
+    display: flex;
+    color: white;
+    text-decoration: none;
+}
+
+#index-main {
+    display: flex;
+  
+}
+
+#sections {
+    position: relative;
+}
+
+#home_bird {
+    position: absolute;
+    height: 1100px;
+    left: -50px;
+}
+
 /*Navigation Container*/
 nav {
     display: flex;
