@@ -19,6 +19,8 @@ button {
     height: 50px;
     width: 150px;
     font-size: large;
+    border-radius: 10px;
+    border-style: solid;
 }
 
 /*Navigation Container*/
@@ -86,13 +88,13 @@ main {
 form {
     position: relative;
     float: inline-end;
-    margin-left: 75px;
+    margin-left: 20%;
     margin-top: 80px;
     width: 500px;
 }
 
 input {
-    width: 100%;
+    width: 95%;
     height: 35px;
     border-radius: 10px;
     border-style: solid;
@@ -101,6 +103,7 @@ input {
 #learn-bird {
     height: 350px;
     border-radius: 100%;
+    margin-left: 20%;
     display: flex;
     flex-direction: row;
     
@@ -108,30 +111,74 @@ input {
 
 h2 {
     width: auto;
-    margin-left: 125px;
+    margin-left: 55%;
     
 }
 
 audio {
-    width:95%;
-    height: 35px;
-    margin-left: 4px;
-    margin-top: 20px;
+    margin-left: 20%;  
+    margin-bottom: 30px;
     border-radius: 10px;
 }
 
 #learn-more-button {
-    margin-left: 100px;
+    margin-left: 50%;
     margin-top: 20px;
-    border-radius: 10px;
+   
 }
 
 
 /*Grid container*/
 
 .grid-container {
+    width: 800px;
     display: grid;
-    gap: 10px;
+    grid-template-columns: auto auto auto;
+
   }
 
+.bird {
+    height: 100px;
+    margin-left: 17%;
+    margin-right: 17%;
+    border-radius: 100px;
+    margin: 20px,20px,20px,20px;
+}
+
+h3 {
+    text-align: center;
+    margin: 20px,20px,10px,20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    
+}
   
+/*Specific to the Quiz Page*/
+
+.quiz-intro {
+    margin-left: 29%;
+ 
+
+}
+
+#instruction {
+    background-color: grey;
+    border-style: solid;
+    height: 350px;
+    width: 350px;
+    border-radius: 100%;
+    text-align: center;
+    
+}
+
+#instruct-text {
+    border-radius: 100%;
+    margin-top: 120px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#get-a-hint {
+    margin-left: 50%;
+    margin-top: 20px;
+}
