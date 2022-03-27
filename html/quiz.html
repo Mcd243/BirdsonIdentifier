@@ -13,12 +13,11 @@
             <a href="index.html" id="logo-container"><img id="" src="../images/BirdLogo.PNG" alt="Robbin logo" height="90px" >
                 <h1>Birdsong Identifier</h1></a>
             <div id="nav-button-container">
-                <button class="nav-button" id="current-page">Learn</button>
-                <a href="quiz.html"><button class="nav-button" >Quiz</button></a>
-                
+                <a href="learn.html"><button class="nav-button">Learn</button></a>
+                <button class="nav-button" id="current-page">Quiz</button>
             </div>
         </nav>
-    </header>    
+    </header>
     <main>
         <section class="quiz-intro">
             <p class="intro">Lets test your skills.
@@ -35,19 +34,16 @@
                     <p id="instruct-text">Click on the audio player to listen to a birdsong. Then select the bird from the list below that matches the birdsong. If you get stuck click on the "Get a Hint "
                         button.
                     </p>
-
-                </div>
-                
-                <button id="get-a-hint">Get a Hint</button>
+                </div>           
             </div>
-            <form action="">
+            <div id="quiz_audio_hint">
                 <audio controls>
                     <source src="../audio/Chaffinch - Fringilla coelebs.mp3" type="audio/mp3">
                     Your browser does not support the audio element.
                 </audio> 
-                <p>Enter a word or phrase that you can associate with the combination of your first two entries. </p>
-                <input type="text" name="memkey" id="memkey">
-            </form>
+                <button id="get-a-hint">Get a Hint</button>
+                <P id="mem_key">Big Kuchunga</P>
+            </div>
         </section>
         <section class="grid-container">    
             <div class="grid-item">

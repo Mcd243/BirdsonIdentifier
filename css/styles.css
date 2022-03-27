@@ -31,8 +31,8 @@ button {
 
 #index-header {
 
-    margin-left: 35%;
-    margin-right: 35%;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     color: white;
     text-decoration: none;
@@ -45,12 +45,14 @@ button {
 
 #sections {
     position: relative;
+    
 }
 
 #home_bird {
     position: absolute;
     height: 1100px;
     left: -50px;
+    z-index: -1;
 }
 
 /*Navigation Container*/
@@ -93,35 +95,37 @@ nav {
 main {
     display: flex;
     flex-direction: column;    
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*Intro paragraph*/
 .intro-container {
     font-size: larger;
     width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
 /*Container that the user interacts with*/
 .interact-container {
-    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 50px;
+    margin-top: 50px;
     display: flex;
-    flex-direction: row;
 }
 
 form {
     position: relative;
     float: inline-end;
-    margin-left: 20%;
-    margin-top: 80px;
-    width: 500px;
+    margin-left: 10%;
+    margin-top: 80px; 
 }
+
+
 
 input {
     width: 95%;
@@ -146,7 +150,7 @@ h2 {
 }
 
 audio {
-    margin-left: 20%;  
+   
     margin-bottom: 30px;
     border-radius: 10px;
 }
@@ -162,6 +166,8 @@ audio {
 
 .grid-container {
     width: 800px;
+    margin-left: auto;
+    margin-right: auto;
     display: grid;
     grid-template-columns: auto auto auto;
 
@@ -169,15 +175,20 @@ audio {
 
 .bird {
     height: 100px;
-    margin-left: 17%;
-    margin-right: 17%;
     border-radius: 100px;
     margin: 20px,20px,20px,20px;
 }
 
+.grid-item {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
 h3 {
     text-align: center;
-    margin: 20px,20px,10px,20px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 20px;
     margin-bottom: 10px;
     
@@ -186,7 +197,8 @@ h3 {
 /*Specific to the Quiz Page*/
 
 .quiz-intro {
-    margin-left: 29%;
+    margin-left: auto;
+    margin-right: auto;
  
 
 }
@@ -204,11 +216,23 @@ h3 {
 #instruct-text {
     border-radius: 100%;
     margin-top: 120px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#get-a-hint {
-    margin-left: 50%;
-    margin-top: 20px;
+#quiz_audio_hint {
+    display: grid;
+    align-content: center;
+}
+
+#get-a-hint { 
+    background-color: rgb(57, 233, 72);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#mem_key {
+    border: 1px;
+    border-color: white;
+
 }
