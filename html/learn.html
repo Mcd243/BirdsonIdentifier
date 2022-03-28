@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../JScript/code.js"></script>
     <title>Birdsong Identifier Learn</title>
 </head>
 <body>
@@ -27,24 +28,27 @@
                 Repeat the process for all the birds in the list.</p>
         </section>
         <section class="interact-container">
-            <div class="audio-player">
+            <div id="learn-bird-container">
                 <h2>Chaffin</h2>
                 <img id="learn-bird" src="../images/Chaffin-sq.jpg" alt="A robbin, perched on a branch" height="460">
                 
-                <a href=""><button id="learn-more-button">Learn More</button></a>
+                <a href="" id="learn-more-button"><button>Learn More</button></a>
             </div>
-            <form action="">
+            <div id="audio-memory-keys">
                 <audio controls>
                     <source src="../audio/Chaffinch - Fringilla coelebs.mp3" type="audio/mp3">
                     Your browser does not support the audio element.
                 </audio> 
-                <p>Robbin sounds like...</p>
-                <input type="text" name="soundsLike" id="soundsLike">
-                <p>The birdsong sounds like the bird is saying...</p>
-                <input type="text" name="saying" id="saying">
-                <p>Enter a word or phrase that you can associate with the combination of your first two entries. </p>
-                <input type="text" name="memkey" id="memkey">
-            </form>
+                <form action="">
+                    <p class="prompt">Robbin sounds like...</p>
+                    <input type="text" name="soundsLike" id="soundsLike">
+                    <p class="prompt">The birdsong sounds like the bird is saying...</p>
+                    <input type="text" name="saying" id="saying">
+                    <p class="prompt">Enter a word or phrase that you can associate with the combination of your first two entries. </p>
+                    <input type="text" name="memkey" id="memkey">
+                </form>
+                <button id="next">Next Bird</button>
+            </div>
         </section>
         <section class="grid-container">    
             <div class="grid-item">
@@ -91,7 +95,8 @@
         </section>
     </main>
     <footer>
-        <a href="https://www.rspb.org.uk/"><img src="../images/RSPBLogo.PNG" height="50px" alt="Logo of the Royal Society For The Protection Of Birds"></a>
+        <p>Site built by Muun Macdonald <br> Audio by <a href="">Audio guy</a> <br>Inspired by <a href=""> The Royal Society for the Protection of Birds</a></p>
+        <a href="https://www.rspb.org.uk/" id="RSPB-logo"><img src="../images/RSPBLogo.PNG" height="50px" alt="Logo of the Royal Society For The Protection Of Birds"></a>
 
     </footer> 
 </body>
