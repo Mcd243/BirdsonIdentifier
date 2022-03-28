@@ -108,3 +108,20 @@ const wood_pigeon = {
     memkey_2: "",
     memkey_hint: "",
 }
+
+/*Create an array of objects*/
+
+const birds = [
+    robin,
+    blackbird,
+    chaffinch,
+    goldfinch,
+    great_tit,
+    long_tailed_tit,
+    magpie,
+    sparrow,
+    starling,
+    wood_pigeon,
+]
+
+console.log(document.getElementById("learn-bird").src = robin.large_img) ;
