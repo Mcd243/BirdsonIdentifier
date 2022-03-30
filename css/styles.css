@@ -203,6 +203,7 @@ h3 {
      /* Add the blur effect */
      filter: blur(1px);
     -webkit-filter: blur(1px);
+    filter: brightness(50%);
     border-style: solid;
     border-width: 3px;
     border-color: white;
