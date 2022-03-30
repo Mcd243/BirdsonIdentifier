@@ -23,7 +23,7 @@ button {
     border-style: solid;
 }
 
-/*Index page*/
+/*-----------------Index page----------------------*/
 #index-body {
     display: grid;
     
@@ -55,7 +55,7 @@ button {
     z-index: -1;
 }
 
-/*Navigation Container*/
+/*--------------Navigation Container------------------*/
 nav {
     display: flex;
     align-items: center;
@@ -91,7 +91,7 @@ nav {
     border-color: white;
 }
 
-/*Main Container*/
+/*----------------Main Container--------------------*/
 main {
     display: flex;
     flex-direction: column;    
@@ -138,13 +138,6 @@ audio {
  
 }
 
-form {
-       
-}
-
-.prompt {
-
-}
 
 #next  {
     margin-left: auto;
@@ -170,17 +163,13 @@ h2 {
     margin-right: auto;   
 }
 
-
-
 #learn-more-button {
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
- 
 }
 
-
-/*Grid container*/
+/*-----------------Grid container--------------------*/
 
 .grid-container {
     width: 800px;
@@ -199,7 +188,6 @@ h2 {
 .grid-item {
     margin-left: auto;
     margin-right: auto;
-
 }
 
 h3 {
@@ -208,17 +196,24 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-    margin-bottom: 10px;
-    
+    margin-bottom: 10px;    
+}
+
+#selected_bird {
+     /* Add the blur effect */
+     filter: blur(1px);
+    -webkit-filter: blur(1px);
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+    opacity: 0.8;
 }
   
-/*Specific to the Quiz Page*/
+/*--------------Specific to the Quiz Page---------------*/
 
 .quiz-intro {
     margin-left: auto;
     margin-right: auto;
- 
-
 }
 
 #instruction {
@@ -227,8 +222,7 @@ h3 {
     height: 350px;
     width: 350px;
     border-radius: 100%;
-    text-align: center;
-    
+    text-align: center;  
 }
 
 #instruct-text {
@@ -255,7 +249,7 @@ h3 {
     margin-right: auto;   
 }    
 
-/*Footer Container*/
+/*----------------Footer Container----------------*/
 
 footer {
     display: flex;

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../JScript/code.js"></script>
+    <title>Birdsong Identifier Learn</title>
+</head>
+<body>
+    <header>
+        <nav>  
+            <a href="index.html" id="logo-container"><img id="" src="../images/BirdLogo.PNG" alt="Robbin logo" height="90px" >
+                <h1>Birdsong Identifier</h1></a>
+            <div id="nav-button-container">
+                <button class="nav-button" id="current-page">Learn</button>
+                <a href="quiz.html"><button class="nav-button" >Quiz</button></a>
+                
+            </div>
+        </nav>
+    </header>    
+    <main>
+        <section class="intro-container">
+            <p id="intro" >We are going to use a memory technique to associate the bird name with the bird song. <br>First think of a word that sounds like or that you associate with the bird name and enter that into the text box. 
+                <br>Second, play the birdsong by clicking on the image of the bird. Now, try to imagine what the bird is saying and enter that into the text box. 
+                <br>Now, think of a word that combines the first two words or phrases and enter it into the text box. This word is the key to remembering both the birds name and its song.
+                Repeat the process for all the birds in the list.</p>
+        </section>
+        <section class="interact-container">
+            <div id="learn-bird-container">
+                <h2>Robbin</h2>
+                <img id="learn-bird" src="../images/starling_sq.jpg" alt="" height="460">
+                
+                <a href="" id="learn-more-button"><button>Learn More</button></a>
+            </div>
+            <div id="audio-memory-keys">
+                <audio controls>
+                    <source src="../audio/robin.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio> 
+                <form action="">
+                    <p class="prompt">Robbin sounds like...</p>
+                    <input type="text" name="soundsLike" id="soundsLike">
+                    <p class="prompt">The birdsong sounds like the bird is saying...</p>
+                    <input type="text" name="saying" id="saying">
+                    <p class="prompt">Enter a word or phrase that you can associate with the combination of your first two entries. </p>
+                    <input type="text" name="memkey" id="memkey">
+                </form>
+                <button id="next">Next Bird</button>
+            </div>
+        </section>
+        <section class="grid-container">    
+            <div class="grid-item">
+                <h3>Robbin</h3>
+                <img src="../images/robin.jpg" alt="" class="bird" >
+            </div>
+            <div class="grid-item">
+                <h3>Blackbird</h3>
+                <img src="../images/blackbird.jpg" alt="" class="bird" >                
+            </div>
+            <div class="grid-item">
+                <h3>Great Tit</h3>
+                <img src="../images/great_tit.jpg" alt="" class="bird" >            
+            </div>
+            <div class="grid-item">
+                <h3>Goldfinch</h3>
+                <img src="../images/goldfingch.jpg" alt="" class="bird" >              
+            </div>
+            <div class="grid-item">
+                <h3>House Sparrow</h3>
+                <img src="../images/house_sparrow.jpg" alt="" class="bird" >               
+            </div>
+            <div class="grid-item">
+                <h3>Starling</h3>
+                <img src="../images/starling.jpg" alt="" class="bird" id="selected_bird">>               
+            </div>
+            <div class="grid-item">
+                <h3>Wood Pigeon</h3>
+                <img src="../images/wood_pigeon.jpg" alt="" class="bird" >               
+            </div>
+            <div class="grid-item">
+                <h3>Long-tailed Tit</h3>
+                <img src="../images/long_tailed_tit.jpg" alt="" class="bird" >             
+            </div>
+            <div class="grid-item">
+                <h3>Chaffin</h3>
+                <img src="../images/chaffin.jpg" alt="" class="bird" >               
+            </div>
+            <div class="grid-item">
+                <h3>Magpie</h3>
+                <img src="../images/magpie.jpg" alt="" class="bird" >               
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>Site built by Muun Macdonald <br> Audio by <a href="">Audio guy</a> <br>Inspired by <a href=""> The Royal Society for the Protection of Birds</a></p>
+        <a href="https://www.rspb.org.uk/" id="RSPB-logo"><img src="../images/RSPBLogo.PNG" height="50px" alt="Logo of the Royal Society For The Protection Of Birds"></a>
+
+    </footer> 
+</body>
+</html>
