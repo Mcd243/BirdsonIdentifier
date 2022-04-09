@@ -10,10 +10,10 @@
 <body>
     <header>
         <nav>  
-            <a href="index.html" id="logo-container"><img id="" src="../images/BirdLogo.PNG" alt="Robbin logo" height="90px" >
+            <a href="index.html" id="logo-container"><img id="" src="../images/bird_logo.PNG" alt="Robbin logo" height="90px" >
                 <h1>Birdsong Identifier</h1></a>
             <div id="nav-button-container">
-                <a href="learn.html"><button class="nav-button">Learn</button></a>
+                <a href="learn_robin.html"><button class="nav-button">Learn</button></a>
                 <button class="nav-button" id="current-page">Quiz</button>
             </div>
         </nav>
@@ -22,30 +22,25 @@
         <section class="quiz-intro">
             <p class="intro">Lets test your skills.
             <br>First choose your difficulty level.</p>
-            <button class="difficulty" id="Easy">Easy</button>
-            <button class="difficulty" id="Medium">Medium</button>
-            <button class="difficulty" id="Hard">Hard</button>
+            <a href="quiz_easy.html"><button class="difficulty" id="Easy">Easy</button></a>
+            <button class="difficulty" id="selected_difficulty">Medium</button>
+            <a href="quiz_hard.html"><button class="difficulty" id="Hard">Hard</button></a>
         </section>    
-        <section class="interact-container">
-            <div class="audio-player">
-                <div id="instruction">
-                    <!--h2>Chaffin</h2-->
-                    <!--img id="learn-bird" src="../images/Chaffin-sq.jpg" alt="A robbin, perched on a branch" height="460"-->
-                    <p id="instruct-text">Click on the audio player to listen to a birdsong. Then select the bird from the list below that matches the birdsong. If you get stuck click on the "Get a Hint "
-                        button.
-                    </p>
-                </div>           
-            </div>
-            <div id="quiz_audio_hint">
-                <audio controls>
-                    <source src="../audio/Chaffinch - Fringilla coelebs.mp3" type="audio/mp3">
-                    Your browser does not support the audio element.
-                </audio> 
-                <button id="get-a-hint">Get a Hint</button>
-                <P id="mem_key" hidden>Big Kuchunga</P>
-            </div>
+        <section class="interact-container" id="instruction">  
+            <p id="instruct-text">Click on the audio player to listen to a birdsong. Then select the bird from
+                the list below that matches the birdsong. If you get stuck click on the "Get a Hint "
+                button.
+            </p>          
         </section>
-        <section class="grid-container">    
+        <div id="quiz_audio_hint">
+            <audio id="quiz_audio" controls>
+                <source src="../audio/Chaffinch - Fringilla coelebs.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio> 
+            <button id="get-a-hint">Get a Hint</button>
+            <P id="mem_key" hidden>Big Kuchunga</P>
+        </div>
+        <section class="grid-container" id="medium_grid">    
             <div class="grid-item">
                 <h3>Robbin</h3>
                 <img src="../images/robin.jpg" alt="" class="bird" >
@@ -70,24 +65,17 @@
                 <h3>Starling</h3>
                 <img src="../images/starling.jpg" alt="" class="bird" >               
             </div>
-            <div class="grid-item">
-                <h3>Wood Pigeon</h3>
-                <img src="../images/wood_pigeon.jpg" alt="" class="bird" >               
-            </div>
-            <div class="grid-item">
-                <h3>Long-tailed Tit</h3>
-                <img src="../images/long_tailed_tit.jpg" alt="" class="bird" >             
-            </div>
-            <div class="grid-item">
-                <h3>Chaffin</h3>
-                <img src="../images/chaffin.jpg" alt="" class="bird" >               
-            </div>
         </section>
+        
     </main>
     <footer>
-        <p>Site built by Muun Macdonald <br> Audio by <a href="">Audio guy</a> <br>Inspired by <a href=""> The Royal Society for the Protection of Birds</a></p>
-        <a href="https://www.rspb.org.uk/" id="RSPB-logo"><img src="../images/RSPB_logo.PNG" height="50px" alt="Logo of the Royal Society For The Protection Of Birds"></a>
-
+        <div>
+            <p>Site built by Muun Macdonald <br> Audio from <a href="https://xeno-canto.org/">xeno-canto.org</a> </p>
+        </div>
+        <div >
+            <a href="https://www.rspb.org.uk/" id="RSPB-logo"><img src="../images/RSPB_logo.PNG" height="50px" alt="Logo of the Royal Society For The Protection Of Birds"></a>
+            <p id="RSPB">Inspired by <a href="https://www.rspb.org.uk/"> The Royal Society for the Protection of Birds</a></p>
+        </div>     
     </footer> 
 </body>
 </html>
