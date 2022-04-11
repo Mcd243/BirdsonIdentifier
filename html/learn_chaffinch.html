@@ -3,103 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="icon" type="image/x-icon" href="../images/bird_logo copy.ico"> 
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../JScript/code.js"></script>
     <title>Birdsong Identifier Learn</title>
 </head>
 <body>
     <header>
-        <nav>  
-            <a href="index.html" id="logo-container"><img id="" src="../images/bird_logo.PNG" alt="Robbin logo" height="90px" >
-                <h1>Birdsong Identifier</h1></a>
+        <nav>
+            <div >  
+                <a href="index.html" id="logo-container" ><img id="" src="../images/bird_logo.PNG" alt="Robbin logo" height="90px" >
+                    <h1>Birdsong Identifier</h1></a>
+            </div>
             <div id="nav-button-container">
                 <button class="nav-button" id="current-page">Learn</button>
-                <a href="quiz_easy.html"><button class="nav-button" >Quiz</button></a>
-                
+                <a href="quiz_easy.html"><button class="nav-button" tabindex="1">Quiz</button></a>     
             </div>
         </nav>
     </header>    
     <main>
         <section class="intro-container">
-            <p id="intro" >We are going to use a memory technique to associate the bird name with the bird song. <br>First think of a word that sounds like or that you associate with the bird name and enter that into the text box. 
-                <br>Second, play the birdsong by clicking on the image of the bird. Now, try to imagine what the bird is saying and enter that into the text box. 
-                <br>Now, think of a word that combines the first two words or phrases and enter it into the text box. This word is the key to remembering both the birds name and its song.
+            <p id="intro" tabindex="2">We are going to use a memory technique to associate the bird name with the bird song. <br><br>First think of a word that sounds like or that you associate with the bird name and enter that into the text box. 
+                <br><br>Second, play the birdsong by clicking on the image of the bird. Now, try to imagine what the bird is saying and enter that into the text box. 
+                <br><br>Now, think of a word that combines the first two words or phrases and enter it into the text box. This word is the key to remembering both the birds name and its song.
                 Repeat the process for all the birds in the list.</p>
         </section>
-        <section class="interact-container">
-            <div id="learn-bird-container">
-                <h2><a id="target">Chaffinch</a></h2>
-                <img id="learn-bird" src="../images/chaffin_sq.jpg" alt="" height="460">
-                
-                <a href="https://www.rspb.org.uk/birds-and-wildlife/wildlife-guides/bird-a-z/chaffinch/?utm_source=subsectionlandingpage&campaign_medium=standalone_cta&utm_content=chaffinch_standardcontentblock" target="_blank" rel="noopener noreferrer" id="learn-more-button"><button>Learn More</button></a>
-            </div>
-            <section class="grid-container">    
-                <div class="grid-item">
-                    <h3>Blackbird</h3>
-                    <a href="learn_blackbird.html#target"><img src="../images/blackbird.jpg" alt="" class="bird" ></a>               
-                </div>
-                <div class="grid-item">
-                    <h3>Great Tit</h3>
-                    <a href="learn_great_tit.html#target"><img src="../images/great_tit.jpg" alt="" class="bird" ></a>            
-                </div>
-                <div class="grid-item">
-                    <h3>Goldfinch</h3>
-                    <a href="learn_goldfinch.html#target"><img src="../images/goldfingch.jpg" alt="" class="bird" ></a>              
-                </div>
-                <div class="grid-item">
-                    <h3>House Sparrow</h3>
-                    <a href="learn_sparrow.html#target"><img src="../images/house_sparrow.jpg" alt="" class="bird" ></a>               
-                </div>
-                <div class="grid-item">
-                    <h3>Starling</h3>
-                    <a href="learn_starling.html#target"><img src="../images/starling.jpg" alt="" class="bird" ></a>               
-                </div>
-                <div class="grid-item">
-                    <h3>Wood Pigeon</h3>
-                    <a href="learn_wood_pigeon.html#target"><img src="../images/wood_pigeon.jpg" alt="" class="bird" ></a>               
-                </div>
-                <div class="grid-item">
-                    <h3>Long-tailed Tit</h3>
-                    <a href="learn_long_tailed_tit.html#target"><img src="../images/long_tailed_tit.jpg" alt="" class="bird" ></a>             
-                </div>
-                <div class="grid-item">
-                    <h3>Robbin</h3>
-                    <a href="learn_robin.html#target"><img src="../images/robin.jpg" alt="" class="bird" ></a>
-                </div>
-                <div class="grid-item">
-                    <h3>Magpie</h3>
-                    <a href="learn_magpie.html#target"><img src="../images/magpie.jpg" alt="" class="bird" ></a>               
-                </div>
-                <button id="next">Next Bird</button>
-            </section>
+        <section class="interact-container">  
             
-        </section>
-        
-        <section id="audio-memory-keys">
-            <p>Play the birdsong and fill in the boxes.</p>
+            <div id="learn-bird-container">
+                <h2><a id="target" >Chaffinch</a></h2>
+                <img id="learn-bird" src="../images/chaffin_sq.jpg" alt="A Chaffinch perched on a branch." height="460" tabindex="3">
+                
+                <a href="https://www.rspb.org.uk/birds-and-wildlife/wildlife-guides/bird-a-z/chaffinch/?utm_source=subsectionlandingpage&campaign_medium=standalone_cta&utm_content=chaffinch_standardcontentblock" target="_blank" rel="noopener noreferrer" id="learn-more-button"><button tabindex="4">Learn More</button></a>
+            </div>
+        </section>       
+        <section id="audio-memory-keys">           
+            <p tabindex="5">Play the birdsong and fill in the boxes.</p>
             <audio controls>
-                <source src="../audio/chaffinch.mp3" type="audio/mp3">
+                <source src="../audio/chaffinch.mp3" type="audio/mp3" tabindex="6">
                 Your browser does not support the audio element.
             </audio> 
             <form action="">
-                <p class="prompt">Chaffinch sounds like...</p>
-                <input type="text" name="soundsLike" id="soundsLike">
-                <p class="prompt">The birdsong sounds like the bird is saying...</p>
-                <input type="text" name="saying" id="saying">
-                <p class="prompt">Enter a word or phrase that you can associate with the combination of your first two entries. </p>
-                <input type="text" name="memkey" id="memkey">
-                <button id="submit">Submit</button>
+                <p class="prompt" tabindex="7">Blackbird sounds like...</p>
+                <input type="text" name="soundsLike" id="soundsLike" tabindex="8">
+                <p class="prompt" tabindex="9">The birdsong sounds like the bird is saying...</p>
+                <input type="text" name="saying" id="saying" tabindex="10">
+                <p class="prompt" tabindex="11">Enter a word or phrase that you can associate with the combination of your first two entries. </p>
+                <input type="text" name="memkey" id="memkey" tabindex="12">
+                <button id="submit" tabindex="13">Submit</button>
+                <button id="next" tabindex="14">Next Bird</button>
             </form>  
+        </section>
+        <section class="grid-container"> 
+               
+            <div class="grid-item">
+                <h3>Robin</h3>
+                <a href="learn_robin.html#target"><img src="../images/robin.jpg" alt="Robin" class="bird" tabindex="15" ></a>
+            </div>
+            <div class="grid-item">
+                <h3>Great Tit</h3>
+                <a href="learn_great_tit.html#target"><img src="../images/great_tit.jpg" alt="Great tit" class="bird" tabindex="16" ></a>            
+            </div>
+            <div class="grid-item">
+                <h3>Goldfinch</h3>
+                <a href="learn_goldfinch.html#target"><img src="../images/goldfingch.jpg" alt="Goldfinch" class="bird" tabindex="17"></a>              
+            </div>
+            <div class="grid-item">
+                <h3>House Sparrow</h3>
+                <a href="learn_sparrow.html#target"><img src="../images/house_sparrow.jpg" alt="House sparrow" class="bird" tabindex="18"></a>               
+            </div>
+            <div class="grid-item">
+                <h3>Starling</h3>
+                <a href="learn_starling.html#target"><img src="../images/starling.jpg" alt="Starling" class="bird" tabindex="19"></a>               
+            </div>
+            <div class="grid-item">
+                <h3>Wood Pigeon</h3>
+                <a href="learn_wood_pigeon.html#target"><img src="../images/wood_pigeon.jpg" alt="Wood Pigeon" class="bird" tabindex="20"></a>               
+            </div>
+            <div class="grid-item">
+                <h3>Long-tailed Tit</h3>
+                <a href="learn_long_tailed_tit.html#target"><img src="../images/long_tailed_tit.jpg" alt="Long-tailed tit" class="bird" tabindex="21"></a>             
+            </div>
+            <div class="grid-item">
+                <h3>Chaffinch</h3>
+                <a href="learn_chaffinch.html#target"><img src="../images/chaffin.jpg" alt="Chaffinch" class="bird" id="selected_bird" tabindex="22"></a>               
+            </div>
+            <div class="grid-item">
+                <h3>Magpie</h3>
+                <a href="learn_magpie.html#target"><img src="../images/magpie.jpg" alt="Magpie" class="bird" tabindex="23"></a>               
+            </div>
+            <div class="grid-item" id="blackbird_grid_item">
+                <h3>Blackbird</h3>
+                <a href="learn_blackbird.html#target"></a><img src="../images/Blackbird.jpg" alt="Blackbird" class="bird" id="selected_bird" tabindex="24"></a>           
+            </div>
         </section>
     </main>
     <footer>
         <div>
-            <p>Site built by Muun Macdonald <br> Audio from <a href="https://xeno-canto.org/">xeno-canto.org</a> </p>
+            <p tabindex="25">Site built by Muun Macdonald <br><br> Audio from <a href="https://xeno-canto.org/" tabindex="26">xeno-canto.org</a></p>
+            <p id="RSPB" tabindex="27">Inspired by <a href="https://www.rspb.org.uk/" tabindex="27"> The Royal Society for the Protection of Birds</a></p>
         </div>
-        <div >
-            <a href="https://www.rspb.org.uk/" id="RSPB-logo"><img src="../images/RSPB_logo.PNG" height="50px" alt="Logo of the Royal Society For The Protection Of Birds"></a>
-            <p id="RSPB">Inspired by <a href="https://www.rspb.org.uk/"> The Royal Society for the Protection of Birds</a></p>
+        <div>
+            <a href="https://www.rspb.org.uk/" id="RSPB-logo"><img src="../images/RSPB_logo.PNG" height="50px" alt="Logo of the Royal Society For The Protection Of Birds" tabindex="28"></a>  
         </div>     
     </footer> 
 </body>

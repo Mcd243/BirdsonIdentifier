@@ -281,10 +281,6 @@ audio {
     height: 40px;
 }
 
-.difficulty {
-    margin: 20px;
-}
-
 #selected_difficulty {
     box-shadow: 5px 3px 3px rgb(24, 32, 20), 5px 3px 3px rgb(24, 32, 20);
     color: rgb(24, 32, 20);
@@ -391,7 +387,7 @@ footer {
 
     #nav-button-container {
         position:relative;
-        width: 100%;
+        width: 95%;
     }
 
     .nav-button {
@@ -443,9 +439,46 @@ footer {
         height: 80px;
     }
 
+    /*------responsive quiz -----------*/
+    #instruction {
+        height: 200px;
+        width: 100%;
+        border-radius: 20px;
+    }
+    
+    #instruct-text {
+        border-radius: 100%;
+        margin-top: 75px;
+    }
 
+    #quiz_audio_hint {
+        margin: 0;
+        width: 100%;
+        
+    }
+    
+    #get-a-hint { 
+        width: 95%;
+    }
+    
+    #quiz_audio {
+        width: 100%;
+    }
+    
+    .difficulty {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+        
+    .quiz-intro {
+        width: 80%
+    }
+
+    #intro {
+        margin: 20px;
+    }
 }
 
 
     
-  
