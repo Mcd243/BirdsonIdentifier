@@ -1,0 +1,329 @@
+/*Global Styles*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:400,500,700');
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #383827;
+    color: white;
+    font-family: Poppins, sans-serif;
+    font-size: 1.2rem;
+}
+
+button {
+    height: 50px;
+    width: 150px;
+    font-size: large;
+    border-radius: 10px;
+    border-style: solid;
+    color: white;
+    background-color: #d1661e;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/*Widescreen*/
+
+/*Navigation Container*/
+nav {
+    display: grid; 
+    grid-template-columns: auto auto;
+}
+
+#logo-container {
+    display: flex;
+    position: relative;
+    color: white;
+    text-decoration: none;
+    left: 10%;  
+}
+
+#nav-button-container {
+    position:absolute;
+    right: 5%;
+}
+
+.nav-button {
+    height: 50px;
+    width: 150px;
+    color: white;
+    border-color: white;
+    background-color: #d1661e;
+    border-style: solid;
+    border-width: 1px;
+    margin: 10px;
+    font-size: large;
+}
+
+#current-page {
+    border-color: #535340;
+    background-color: #383827;
+    box-shadow: 5px 3px 3px rgb(24, 32, 20), 5px 3px 3px rgb(24, 32, 20);
+}
+
+/*Main Container*/
+main {
+    display: flex;
+    flex-direction: column;    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Intro paragraph*/
+.intro-container {
+    font-size: larger;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    background-color:#2c2c1d;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 5px 3px 3px rgb(24, 32, 20), 5px 3px 3px rgb(24, 32, 20);
+}
+
+/*Container that the user interacts with*/
+.interact-container {
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;   
+    display: grid;
+    grid-template-columns: auto auto ;    
+}
+
+#learn-bird-container {
+    display: grid;
+}
+
+input {
+    width: 400px;
+    height: 40px;
+    border-radius: 7px;
+    border-style: solid;
+}
+
+#learn-bird {
+    height: 400px;
+    border-radius: 100%;
+    box-shadow: 5px 3px 3px rgb(24, 32, 20), 5px 3px 3px rgb(24, 32, 20);
+}
+
+h2 {
+    font-weight: normal;
+    margin-left: auto;
+    margin-right: auto;   
+}
+
+#learn-more-button {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}   
+
+#submit {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 400px;
+}   
+
+#next  {
+    width: 400px;  
+}
+
+#blackbird_grid_item {
+    grid-column-start: 2;
+}
+
+/*Grid container*/
+.grid-container {
+    width: 650px;
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.bird {
+    height: 90px;
+    border-radius: 100px;
+    box-shadow: 5px 3px 3px rgb(24, 32, 20), 5px 3px 3px rgb(24, 32, 20);
+}
+    
+.grid-item {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h3 {
+    font-weight: lighter;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;    
+}
+
+#selected_bird {
+    opacity: 0.5;
+    border-style: solid;
+}
+
+/*User Input*/
+#audio-memory-keys{
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;  
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+audio {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;  
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+  
+/*Footer Container*/
+footer {
+    display: grid;
+    grid-template-columns: auto auto ;
+    padding: 20px;
+    background-color: #868547;
+    color: #2c2c1d;
+}
+
+#RSPB {
+    float: right;
+}
+
+#RSPB-logo {
+    float: right; 
+    margin: 10px; 
+}
+
+/*Responsive Laptop 1024px*/
+@media only screen and (max-width: 1024px) {
+    .interact-container {  
+        grid-template-columns: auto;
+    }
+
+    #learn-bird {
+        margin-left: auto;
+        margin-right: auto;  
+        height: 300px;    
+    }
+    
+    .grid-container {
+        width: 550px;
+        height: 600px;
+    }
+    
+    .bird {
+        height: 80px;  
+    }
+
+    #next  {  
+        margin-top: 10px;
+    }
+}
+
+  /*Responsive Header and footer changes 890px*/
+
+@media only screen and (max-width: 890px) {
+    nav { 
+        grid-template-columns: auto;
+    }
+    
+    #logo-container {
+        display: flex;
+        position: relative;
+    }
+    
+    #nav-button-container {
+        position:relative;
+        margin-left: auto;
+        margin-right: auto;
+    } 
+
+/*Responsive to Smartphones from 550px*/
+
+@media only screen and (max-width: 550px) {
+    body {
+         font-size: .8rem;
+    }
+    
+    button {
+        height: 50px;
+        width: 100%;
+        font-size: medium;     
+    }
+
+    #logo-container {
+        text-size-adjust: 1.2rm;
+    }
+
+    #nav-button-container {
+        position:relative;
+        width: 95%;
+    }
+
+    .nav-button {
+        height: 50px;
+        width: 100%;
+        margin-left: 15px;
+    }
+    
+    #current-page {
+        width: 100%; 
+    }
+
+    #learn-bird {
+        height: 200px;
+        width: 100%;
+    }
+
+    #learn-more-button {
+        width: 100%;
+    }  
+    
+    #audio-memory-keys {
+        width: 100%;
+    }
+
+    audio {
+        width: 100%;    
+    }
+    
+    input {
+        width: 100%;  
+    }
+
+    #submit {
+        width: 100%;
+    }   
+    
+    #next  {
+        width: 100%;  
+    }
+
+    .grid-container {
+        width: 100%;
+        height: 770px;
+        grid-template-columns: auto auto;
+    }
+    
+    .bird {
+        height: 80px;
+    }
+}

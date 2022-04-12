@@ -1,0 +1,147 @@
+/*Global Styles*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:400,500,700');
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #383827;
+    color: white;
+    font-family: Poppins, sans-serif;
+    font-size: 1.2rem;
+}
+
+button {
+    height: 50px;
+    width: 150px;
+    font-size: large;
+    border-radius: 10px;
+    border-style: solid;
+    color: white;
+    background-color: #d1661e;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/*Navigation Container*/
+#logo-container {
+    display: flex;
+    position: relative;
+    color: white;
+    text-decoration: none;
+    left: 10%;  
+}
+
+/*Body of the page*/
+#index-body {
+    display: grid;
+    background-image: url("../images/robincut.PNG");
+    background-repeat: no-repeat;
+    background-color:#383827;
+    height: 700px;
+    background-position: -150px;
+    background-size: cover;     
+}
+
+#index-main {
+    display: grid;
+    grid-template-columns: 450px 450px;
+}
+
+#index-header {
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    color: white;
+    text-decoration: none;
+}
+
+#sections {
+    grid-column-start: 2; 
+    width: 100%;
+    margin-bottom: 150px;      
+}
+
+.home_button {
+    margin-left: 150px;   
+}
+
+.index_p {
+    margin-top: 30px;
+}
+
+/*Responsive changes 890px*/
+@media only screen and (max-width: 890px) {
+    #index-body {
+        display: grid;
+        background-image: url("../images/robincut.PNG");
+        background-repeat: no-repeat;
+        background-color:#383827;
+        height: 500px;
+        background-position: -200px 150px;
+        background-size: cover;      
+    }
+    
+    #index-main {
+        display: grid;
+        grid-template-columns: 200px 350px;
+    }
+           
+    .home_button {
+        margin-left: 100px;   
+    }
+}
+
+/*Responsive changes for smartphones at 550px*/
+@media only screen and (max-width: 550px) {
+    body {
+         font-size: .8rem;
+    }
+    
+    button {
+        height: 50px;
+        width: 100%;
+        font-size: medium;     
+    }
+
+    #logo-container {
+        text-size-adjust: 1.2rm;
+    }
+
+    #index-body {
+        background-image: url("");
+    }
+    
+    #index-main {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 10px;
+    }
+    
+    #index-header {
+        height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        color: white;
+        text-decoration: none;
+    }
+    
+    #sections {
+        grid-column-start: 1; 
+        width: 100%;
+        margin-top: 0px;      
+    }
+    
+    .home_button {
+        margin: 0;     
+    }
+}
