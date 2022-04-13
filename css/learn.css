@@ -132,6 +132,10 @@ h2 {
     margin-top: 30px;
     margin-bottom: 20px;
     width: 400px;
+    background-color: #d1661e;
+    color: white;
+    height: 50px;
+    font-size: large;
 }   
 
 #next  {
