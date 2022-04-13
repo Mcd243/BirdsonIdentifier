@@ -4,7 +4,8 @@ myForm.addEventListener("submit", addTodo);
 
 function addTodo(e) {
   e.preventDefault();
-  const userInput = document.querySelector(".userAdd").value;
+  const object = {}
+  const soundsLike = document.getElementById("#soundLike").value;
   const userListItem = document.createElement("li");
   userListItem.appendChild(document.createTextNode(userInput));
   list.appendChild(userListItem);

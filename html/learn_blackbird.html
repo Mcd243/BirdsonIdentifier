@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="icon" type="image/x-icon" href="../images/bird_logo copy.ico"> 
     <link rel="stylesheet" href="../css/learn.css">
-    <script src="../JScript/code.js"></script>
+    <script src="../JScript/learn.js" charset="utf-8"></script>
     <title>Birdsong Identifier Learn</title>
 </head>
 <body>
@@ -44,7 +44,7 @@
                 <source src="../audio/blackbird.mp3" type="audio/mp3" tabindex="6">
                 Your browser does not support the audio element.
             </audio> 
-            <form action="" id="memory_form">
+            <form id="memory_form">
                 <p class="prompt" tabindex="7">Blackbird sounds like...</p>
                 <input type="text" name="soundsLike" id="soundsLike" tabindex="8">
                 <p class="prompt" tabindex="9">The birdsong sounds like the bird is saying...</p>
@@ -93,8 +93,8 @@
                 <h3>Magpie</h3>
                 <a href="learn_magpie.html#target"><img src="../images/magpie.jpg" alt="Magpie" class="bird" tabindex="23"></a>               
             </div>
-            <div class="grid-item" id="blackbird_grid_item">
-                <h3>Blackbird</h3>
+            <div class="grid-item">
+                <h3 id="current">Blackbird</h3>
                 <a href="learn_blackbird.html#target"></a><img src="../images/Blackbird.jpg" alt="Blackbird" class="bird" id="selected_bird" tabindex="24"></a>           
             </div>
         </section>
