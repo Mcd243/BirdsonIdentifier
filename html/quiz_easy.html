@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../images/bird_logo copy.ico"> 
     <link rel="stylesheet" href="../css/quiz.css">
+    <script src="../JScript/quiz.js" charset="utf-8"></script>
     <title>Birdsong Identifier Quiz</title>
 </head>
 <body>
@@ -38,22 +40,22 @@
         </section>
         <div id="quiz_audio_hint">
             <audio id="quiz_audio" controls>
-                <source src="../audio/Chaffinch - Fringilla coelebs.mp3" type="audio/mp3">
+                <source src="../audio/chaffinch.mp3" type="audio/mp3">
                 Your browser does not support the audio element.
             </audio>
             <button id="get-a-hint">Get a Hint</button>
             <P id="mem_key" hidden>Big Kuchunga</P>
         </div>
         <section class="grid-container" id="easy_grid">
-            <div class="grid-item">
+            <div class="grid-item" id="item_1">
                 <h3>Robbin</h3>
                 <img src="../images/robin.jpg" alt="" class="bird">
             </div>
-            <div class="grid-item">
+            <div class="grid-item" id="item_2">
                 <h3>Blackbird</h3>
                 <img src="../images/blackbird.jpg" alt="" class="bird">
             </div>
-            <div class="grid-item">
+            <div class="grid-item" id="item_3">
                 <h3>Great Tit</h3>
                 <img src="../images/great_tit.jpg" alt="" class="bird">
             </div>
