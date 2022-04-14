@@ -33,20 +33,22 @@ document.addEventListener('DOMContentLoaded', () => {
         submit_button.parentNode.removeChild(submit_button);
         //store item in localstorage
         localStorage.setItem(bird, JSON.stringify(item));
-    }
+    };
 
     //get the object relevant to this page
     const bird = document.getElementById("current").innerHTML;
     let bird_array = localStorage.getItem(bird);
     bird_array = JSON.parse(bird_array)
-    replace("soundsLike", bird_array.like);
-    replace("saying", bird_array.saying);
-    replace("memkey", bird_array.memKey);
-    
-
-    // Collecting user input
-    const birdForm = document.getElementById("memory_form");
-    birdForm.addEventListener("submit", addToObject);
-
-    
+    //check to see if there is data in the JSON object
+    if (bird_array == null) {
+        // Collecting user input
+        const birdForm = document.getElementById("memory_form");
+        birdForm.addEventListener("submit", addToObject);
+        
+    } else {
+        //add stored object values to the page
+        replace("soundsLike", bird_array.like);
+        replace("saying", bird_array.saying);
+        replace("memkey", bird_array.memKey)
+    };  
 })
