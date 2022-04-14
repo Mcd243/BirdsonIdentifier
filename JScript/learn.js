@@ -1,24 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // intialize an empty list to store user input
-    let memKey_list = [];
-    const bird = document.getElementById("current").innerHTML;
-    let get_list = localStorage.getItem(bird);
-    memKey_list.push(get_list);
-    console.log(memKey_list)
 
-
-    //initialize variables
-    
-
-    // Collecting user input
-    const birdForm = document.getElementById("memory_form");
-    birdForm.addEventListener("submit", addToObject);
-
+    //const isObjectEmpty = Object.keys(object).length === 0;
+    //Object.keys(nonEmpty).length === 0; // => false
     //function to replace an item
     function replace(input_id, new_p) {
-
         const old = document.getElementById(input_id);
-        const new_element = document.createElement('p');
+        const new_element = document.createElement('h3');
         new_element.innerHTML = new_p;
         old.parentNode.replaceChild(new_element, old);
     }
@@ -44,10 +31,22 @@ document.addEventListener('DOMContentLoaded', () => {
         //Remove the submit button
         var submit_button = document.getElementById("submit");
         submit_button.parentNode.removeChild(submit_button);
-
-        //Add the object to the list
-        memKey_list.push(item)
-        //send to local storage   
-        localStorage.setItem(bird, JSON.stringify(memKey_list));
+        //store item in localstorage
+        localStorage.setItem(bird, JSON.stringify(item));
     }
+
+    //get the object relevant to this page
+    const bird = document.getElementById("current").innerHTML;
+    let bird_array = localStorage.getItem(bird);
+    bird_array = JSON.parse(bird_array)
+    replace("soundsLike", bird_array.like);
+    replace("saying", bird_array.saying);
+    replace("memkey", bird_array.memKey);
+    
+
+    // Collecting user input
+    const birdForm = document.getElementById("memory_form");
+    birdForm.addEventListener("submit", addToObject);
+
+    
 })
