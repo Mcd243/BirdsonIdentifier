@@ -140,8 +140,20 @@ h2 {
 }   
 
 #next  {
-    width: 400px;  
+    width: 400px;
+    height: 50px;
+    font-size: large;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    color: white;
+    background-color: #d1661e; 
+    padding-left: 40%;
+    padding-top: 10px;
 }
+
+
 
 #blackbird_grid_item {
     grid-column-start: 2;
