@@ -4,81 +4,71 @@ const robin = {
     name: "Robbin",
     large_img: "../images/robin_sq.jpg",
     small_img: "../images/robin.jpg",
-    audio: "../audio/robin.mp3",
-    memkey_hint: "",
-}
+    audio: "../audio/robin.mp3"
+};
 
 const blackbird = {
     name: "Blackbird",
     large_img: "../images/blackbird_sq.jpg",
     small_img: "../images/blackbird.jpg",
-    audio: "../audio/blackbird.mp3",
-    memkey_hint: "",
-}
+    audio: "../audio/blackbird.mp3"
+};
 
 const chaffinch = {
     name: "Chaffinch",
     large_img: "../images/chaffin_sq.jpg",
     small_img: "../images/chaffin.jpg",
-    audio: "../audio/chaffinch.mp3",
-    memkey_hint: "",
-}
+    audio: "../audio/chaffinch.mp3"
+};
 
 const goldfinch = {
     name: "Goldfinch",
     large_img: "../images/goldfinch_sq.jpg",
     small_img: "../images/goldfinch.jpg",
-    audio: "../audio/goldfinch.mp3",
-    memkey_hint: "",
-}
+    audio: "../audio/goldfinch.mp3"
+};
 
 const great_tit = {
     name: "Great Tit",
     large_img: "../images/great_tit_sq.jpg",
     small_img: "../images/great_tit.jpg",
-    audio: "../audio/great_tit.mp3",
-    memkey_hint: "",
-}
+    audio: "../audio/great_tit.mp3"
+};
 
 const long_tailed_tit = {
     name: "Long-tailed Tit",
     large_img: "../images/long_tailed_tit_sq.jpg",
     small_img: "../images/long_tailed_tit.jpg",
-    audio: "../audio/long_tailed_tit.mp3",
-    memkey_hint: "",
-}
+    audio: "../audio/long_tailed_tit.mp3"
+};
 
 const magpie = {
     name: "Magpie",
     large_img: "../images/magpie_sq.jpg",
     small_img: "../images/magpie.jpg",  
-    audio: "../audio/magpie.mp3",
-    memkey_hint: "",
-}
+    audio: "../audio/magpie.mp3"
+};
 
 const sparrow = {
     name: "Sparrow",
     large_img: "../images/sparrow_sq.jpg",
     small_img: "../images/sparrow.jpg",
-    audio: "../audio/sparrow.mp3",
-    memkey_hint: "",
-}
+    audio: "../audio/sparrow.mp3"
+};
 
 const starling = {
     name: "Starling",
     large_img: "../images/starling_sq.jpg",
     small_img: "../images/starling.jpg",
-    audio: "../audio/wood_starling.mp3",
-    memkey_hint: "",
-}
+    audio: "../audio/wood_starling.mp3"
+};
 
 const wood_pigeon = {
     name: "Wood Pigeon",
     large_img: "../images/wood_pigeon_sq.jpg",
     small_img: "../images/wood_pigeon.jpg",
-    audio: "../audio/wood_pigeon.mp3",
-    memkey_hint: "",
-}
+    audio: "../audio/wood_pigeon.mp3"
+};
 
 //Create an array of objects
 const birds = [
@@ -92,7 +82,7 @@ const birds = [
     sparrow,
     starling,
     wood_pigeon,
-]
+];
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -110,7 +100,58 @@ document.addEventListener('DOMContentLoaded', () => {
         wood_pigeon,
     ]
 
-    console.log(birds)
+    let main_birds = [...birds]
+
+    let populate_birds = []
+
+    const difficulty = document.getElementById("selected_difficulty").innerHTML;
+    console.log(difficulty)
+
+    if (difficulty == "Easy") {
+        select_random(birds, populate_birds)
+        const main_bird = populate_birds[0];
+        console.log(main_bird)
+        select_bird(2, birds, populate_birds);
+        //randomize the selection
+        randomize(populate_birds)
+
+    }
+    console.log()
+    
+    console.log(populate_birds)
+
+    
+    
+    //pick a random bird and add it to a list
+    function select_random(list, push_array) {
+        let random_index = Math.floor(Math.random() * list.length);
+        let random_bird = list[random_index];
+        push_array.push(random_bird);
+        list.splice(random_index, 1);      
+    };
+
+    //repeat the select function
+    function select_bird(times, array, push_array) {
+        for (let step = 0; step < times; step++) {
+            select_random(array, push_array);           
+        }
+    };
+
+    //randomize a list
+    function randomize(list) {
+        let randomized = [];
+        for (let step = 0; step < list.length; step++) {
+            let random_index = Math.floor(Math.random() * list.length);
+            let random_bird = list[random_index];
+            randomized.push(random_bird);
+            //list.splice(random_index, 1);            
+        }
+        list = [...randomized]
+    }
+
+
+   
+
 
     //get a random bird from birds
         //add audio file to page
