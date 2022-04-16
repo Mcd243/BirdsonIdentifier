@@ -70,21 +70,6 @@ const wood_pigeon = {
     audio: "../audio/wood_pigeon.mp3"
 };
 
-//Create an array of objects
-const birds = [
-    robin,
-    blackbird,
-    chaffinch,
-    goldfinch,
-    great_tit,
-    long_tailed_tit,
-    magpie,
-    sparrow,
-    starling,
-    wood_pigeon,
-];
-
-
 document.addEventListener('DOMContentLoaded', () => {
 
     const birds = [
@@ -110,20 +95,51 @@ document.addEventListener('DOMContentLoaded', () => {
     if (difficulty == "Easy") {
         select_random(birds, populate_birds)
         const main_bird = populate_birds[0];
+        main_birds.splice(main_bird, 1); 
         console.log(main_bird)
+        console.log(main_birds)
         select_bird(2, birds, populate_birds);
         //randomize the selection
         populate_grid(populate_birds, "img_1", "name_1")
         populate_grid(populate_birds, "img_2", "name_2")
         populate_grid(populate_birds, "img_3", "name_3")
 
+    }else if (difficulty == "Medium") {
+        select_random(birds, populate_birds)
+        const main_bird = populate_birds[0];
+        main_birds.splice(main_bird, 1); 
+        console.log(main_bird)
+        console.log(main_birds)
+        select_bird(2, birds, populate_birds);
+        //randomize the selection
+        populate_grid(populate_birds, "img_1", "name_1")
+        populate_grid(populate_birds, "img_2", "name_2")
+        populate_grid(populate_birds, "img_3", "name_3")
+        populate_grid(populate_birds, "img_4", "name_4")
+        populate_grid(populate_birds, "img_5", "name_5")
+        populate_grid(populate_birds, "img_6", "name_6")
+
+    }else {
+        select_random(birds, populate_birds)
+        const main_bird = populate_birds[0];
+        main_birds.splice(main_bird, 1); 
+        console.log(main_bird)
+        console.log(main_birds)
+        select_bird(2, birds, populate_birds);
+        //randomize the selection
+        populate_grid(populate_birds, "img_1", "name_1")
+        populate_grid(populate_birds, "img_2", "name_2")
+        populate_grid(populate_birds, "img_3", "name_3")
+        populate_grid(populate_birds, "img_4", "name_4")
+        populate_grid(populate_birds, "img_5", "name_5")
+        populate_grid(populate_birds, "img_6", "name_6")
+        populate_grid(populate_birds, "img_7", "name_7")
+        populate_grid(populate_birds, "img_8", "name_8")
+        populate_grid(populate_birds, "img_9", "name_9")
+
     }
     console.log(birds)
-    
-    console.log(populate_birds)
-
-    
-    
+      
     //pick a random bird and add it to a list
     function select_random(list, push_array) {
         let random_index = Math.floor(Math.random() * list.length);
