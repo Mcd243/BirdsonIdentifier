@@ -113,10 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(main_bird)
         select_bird(2, birds, populate_birds);
         //randomize the selection
-        randomize(populate_birds)
+        populate_grid(populate_birds, "img_1", "name_1")
+        populate_grid(populate_birds, "img_2", "name_2")
+        populate_grid(populate_birds, "img_3", "name_3")
 
     }
-    console.log()
+    console.log(birds)
     
     console.log(populate_birds)
 
@@ -137,16 +139,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    //randomize a list
-    function randomize(list) {
+    //randomly put on the page/////////
+    function populate_grid(list, img_id, name_id) {
         let randomized = [];
         for (let step = 0; step < list.length; step++) {
             let random_index = Math.floor(Math.random() * list.length);
             let random_bird = list[random_index];
-            randomized.push(random_bird);
-            //list.splice(random_index, 1);            
+            //set the bird image
+            let bird_img = document.getElementById(img_id);
+            bird_img.setAttribute('src', random_bird.small_img)
+            //set the bird name     
+            let bird_name = document.getElementById(name_id);
+            bird_name.textContent = random_bird.name  
+            list.splice(random_index, 1);    
         }
-        list = [...randomized]
+        
     }
 
 
