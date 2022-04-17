@@ -98,15 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
     birds.splice(birds.indexOf(main_bird), 1);
 
     //load the main bird audio file to the page
-    //let bird_song = document.getElementsByTagName("source");
-    //console.log(bird_song)
-    //console.log(main_bird.audio)
-    //bird_song.setAttribute('src', main_bird.audio);
-
-    document.getElementsByTagName("source").src= main_bird.audio;
-    console.log(main_bird)
-    console.log(document.getElementsByTagName("source").src= main_bird.audio)
-
+    document.getElementById('audio_src').src=main_bird.audio;
+    console.log(main_bird.audio)
+    
 
     //Get the difficulty of the page
     const difficulty = document.getElementById("selected_difficulty").innerHTML;
@@ -167,5 +161,4 @@ document.addEventListener('DOMContentLoaded', () => {
             list.splice(random_index, 1);    
         }
 
-    
 })    
