@@ -24,7 +24,7 @@ const chaffinch = {
 const goldfinch = {
     name: "Goldfinch",
     large_img: "../images/goldfinch_sq.jpg",
-    small_img: "../images/goldfinch.jpg",
+    small_img: "../images/goldfingch.jpg",
     audio: "../audio/goldfinch.mp3"
 };
 
@@ -51,8 +51,8 @@ const magpie = {
 
 const sparrow = {
     name: "Sparrow",
-    large_img: "../images/sparrow_sq.jpg",
-    small_img: "../images/sparrow.jpg",
+    large_img: "../images/house_sparrow_sq.jpg",
+    small_img: "../images/house_sparrow.jpg",
     audio: "../audio/sparrow.mp3"
 };
 
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         main_birds.splice(main_bird, 1); 
         console.log(main_bird)
         console.log(main_birds)
-        select_bird(2, birds, populate_birds);
+        select_bird(5, birds, populate_birds);
         //randomize the selection
         populate_grid(populate_birds, "img_1", "name_1")
         populate_grid(populate_birds, "img_2", "name_2")
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
         main_birds.splice(main_bird, 1); 
         console.log(main_bird)
         console.log(main_birds)
-        select_bird(2, birds, populate_birds);
+        select_bird(8, birds, populate_birds);
         //randomize the selection
         populate_grid(populate_birds, "img_1", "name_1")
         populate_grid(populate_birds, "img_2", "name_2")
@@ -144,8 +144,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function select_random(list, push_array) {
         let random_index = Math.floor(Math.random() * list.length);
         let random_bird = list[random_index];
-        push_array.push(random_bird);
-        list.splice(random_index, 1);      
+        if (push_array.includes(random_bird)) {
+            let random_index = Math.floor(Math.random() * list.length);
+            let random_bird = list[random_index];
+        } else {}
+            push_array.push(random_bird);
+            //list.splice(random_index, 1);      
     };
 
     //repeat the select function
