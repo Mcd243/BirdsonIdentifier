@@ -60,7 +60,7 @@ const starling = {
     name: "Starling",
     large_img: "../images/starling_sq.jpg",
     small_img: "../images/starling.jpg",
-    audio: "../audio/wood_starling.mp3"
+    audio: "../audio/starling.mp3"
 };
 
 const wood_pigeon = {
@@ -70,169 +70,102 @@ const wood_pigeon = {
     audio: "../audio/wood_pigeon.mp3"
 };
 
+let birds = [
+    robin,
+    blackbird,
+    chaffinch,
+    goldfinch,
+    great_tit,
+    long_tailed_tit,
+    magpie,
+    sparrow,
+    starling,
+    wood_pigeon,
+]
+let main_birds = [...birds];
+let elected_birds = [];
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
-    const birds = [
-        robin,
-        blackbird,
-        chaffinch,
-        goldfinch,
-        great_tit,
-        long_tailed_tit,
-        magpie,
-        sparrow,
-        starling,
-        wood_pigeon,
-    ]
+    //Detemine main bird
+    const main_bird = get_random_bird_from(main_birds);
+    //add main bird to elected birds
+    elected_birds.push(main_bird);
+    //remove from main birds
+    main_birds.splice(main_birds.indexOf(main_bird), 1);
+    birds.splice(birds.indexOf(main_bird), 1);
 
-    let main_birds = [...birds]
+    //load the main bird audio file to the page
+    //let bird_song = document.getElementsByTagName("source");
+    //console.log(bird_song)
+    //console.log(main_bird.audio)
+    //bird_song.setAttribute('src', main_bird.audio);
 
-    let populate_birds = []
+    document.getElementsByTagName("source").src= main_bird.audio;
+    console.log(main_bird)
+    console.log(document.getElementsByTagName("source").src= main_bird.audio)
 
+
+    //Get the difficulty of the page
     const difficulty = document.getElementById("selected_difficulty").innerHTML;
-    console.log(difficulty)
-
     if (difficulty == "Easy") {
-        select_random(birds, populate_birds)
-        const main_bird = populate_birds[0];
-        main_birds.splice(main_bird, 1); 
-        console.log(main_bird)
-        console.log(main_birds)
-        select_bird(2, birds, populate_birds);
-        //randomize the selection
-        populate_grid(populate_birds, "img_1", "name_1")
-        populate_grid(populate_birds, "img_2", "name_2")
-        populate_grid(populate_birds, "img_3", "name_3")
-
-    }else if (difficulty == "Medium") {
-        select_random(birds, populate_birds)
-        const main_bird = populate_birds[0];
-        main_birds.splice(main_bird, 1); 
-        console.log(main_bird)
-        console.log(main_birds)
-        select_bird(5, birds, populate_birds);
-        //randomize the selection
-        populate_grid(populate_birds, "img_1", "name_1")
-        populate_grid(populate_birds, "img_2", "name_2")
-        populate_grid(populate_birds, "img_3", "name_3")
-        populate_grid(populate_birds, "img_4", "name_4")
-        populate_grid(populate_birds, "img_5", "name_5")
-        populate_grid(populate_birds, "img_6", "name_6")
-
-    }else {
-        select_random(birds, populate_birds)
-        const main_bird = populate_birds[0];
-        main_birds.splice(main_bird, 1); 
-        console.log(main_bird)
-        console.log(main_birds)
-        select_bird(8, birds, populate_birds);
-        //randomize the selection
-        populate_grid(populate_birds, "img_1", "name_1")
-        populate_grid(populate_birds, "img_2", "name_2")
-        populate_grid(populate_birds, "img_3", "name_3")
-        populate_grid(populate_birds, "img_4", "name_4")
-        populate_grid(populate_birds, "img_5", "name_5")
-        populate_grid(populate_birds, "img_6", "name_6")
-        populate_grid(populate_birds, "img_7", "name_7")
-        populate_grid(populate_birds, "img_8", "name_8")
-        populate_grid(populate_birds, "img_9", "name_9")
-
+        get_unique_birds(3, birds, elected_birds);
+        populate_grid(elected_birds, "img_1", "name_1")
+        populate_grid(elected_birds, "img_2", "name_2")
+        populate_grid(elected_birds, "img_3", "name_3")
+    } else if (difficulty == "Medium") {
+        get_unique_birds(5, birds, elected_birds); 
+        populate_grid(elected_birds, "img_1", "name_1");
+        populate_grid(elected_birds, "img_2", "name_2");
+        populate_grid(elected_birds, "img_3", "name_3");
+        populate_grid(elected_birds, "img_4", "name_4");
+        populate_grid(elected_birds, "img_5", "name_5");
+        populate_grid(elected_birds, "img_6", "name_6");
+        
+    } else {
+        get_unique_birds(8, birds, elected_birds);
+        populate_grid(elected_birds, "img_1", "name_1");
+        populate_grid(elected_birds, "img_2", "name_2");
+        populate_grid(elected_birds, "img_3", "name_3");
+        populate_grid(elected_birds, "img_4", "name_4");
+        populate_grid(elected_birds, "img_5", "name_5");
+        populate_grid(elected_birds, "img_6", "name_6");
+        populate_grid(elected_birds, "img_7", "name_7");
+        populate_grid(elected_birds, "img_8", "name_8");
+        populate_grid(elected_birds, "img_9", "name_9");
     }
-    console.log(birds)
-      
-    //pick a random bird and add it to a list
-    function select_random(list, push_array) {
-        let random_index = Math.floor(Math.random() * list.length);
-        let random_bird = list[random_index];
-        if (push_array.includes(random_bird)) {
-            let random_index = Math.floor(Math.random() * list.length);
-            let random_bird = list[random_index];
-        } else {}
-            push_array.push(random_bird);
-            //list.splice(random_index, 1);      
-    };
+    
+    
+    function get_random_bird_from(array) {
+        let random_index = Math.floor(Math.random() * array.length);
+        let random_bird = array[random_index];
+        return random_bird;         
+    }
 
-    //repeat the select function
-    function select_bird(times, array, push_array) {
+    function get_unique_birds(times, array, push_array) {
         for (let step = 0; step < times; step++) {
-            select_random(array, push_array);           
+            let bird = get_random_bird_from(birds);
+            //add bird to elected birds
+            push_array.push(bird);
+            //remove from birds
+            array.splice(array.indexOf(bird), 1);  
         }
-    };
+    }
 
-    //randomly put on the page/////////
     function populate_grid(list, img_id, name_id) {
-        let randomized = [];
-        for (let step = 0; step < list.length; step++) {
             let random_index = Math.floor(Math.random() * list.length);
             let random_bird = list[random_index];
             //set the bird image
             let bird_img = document.getElementById(img_id);
-            bird_img.setAttribute('src', random_bird.small_img)
+            bird_img.setAttribute('src', random_bird.small_img);
             //set the bird name     
             let bird_name = document.getElementById(name_id);
-            bird_name.textContent = random_bird.name  
+            bird_name.textContent = random_bird.name;
+            //console.log(bird_name.textContent)
             list.splice(random_index, 1);    
         }
-        
-    }
-
-
-   
-
-
-    //get a random bird from birds
-        //add audio file to page
-        //get memkey from storage
-        
-
-    //remove bird from list
-
-    // if easy pick 2 birds add to list
-        //add 3 birds to grid 
-        //event listener click
-
-    // if easy pick 5 birds add to list
-        //add 6 birds to grid
-        //event listener click
-
-    // if easy pick 8 birds add to list
-        //add 9 birds to grid
-        //event listener click
-
-    //if get hint button pressed 
-        ////add memkey to page 
-
-    //if chosen bird == selected bird
-        //display popup "correct"
-        //add one to counter
-
-    //else 
-        //display popup "wrong "
-
-    //if page is medium birdlist is empty 
-        //display correct counter out of 10
-        //if correct counter <= 3
-            //keep trying
-        //elif correct counter >3  
-            //very good try hard
-            
-
-    //if page is hard birdlist is empty 
-        //display correct counter out of 10
-        //if correct counter <= 5
-            //keep trying or try medium
-        //elif correct counter >5  
-            //very good keep going
-        //els
-        
-
-
 
     
-
-
-    
-
-
-
 })    
