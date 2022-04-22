@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,15 +29,17 @@
             <button class="difficulty" id="selected_difficulty">Medium</button>
             <a href="quiz_hard.html"><button class="difficulty" id="Hard">Hard</button></a>
         </section>    
-        <section class="interact-container" id="instruction">  
-            <p id="instruct-text">Click on the audio player to listen to a birdsong. Then select the bird from
-                the list below that matches the birdsong. If you get stuck click on the "Get a Hint "
-                button.
-            </p>          
+        <section id="parent"> 
+            <div class="interact-container" id="instruction">
+                <p id="instruct-text">Click on the audio player to listen to a birdsong. Then select the bird from
+                    the list below that matches the birdsong. If you get stuck click on the "Get a Hint "
+                    button.
+                </p>   
+            </div>
         </section>
         <div id="quiz_audio_hint">
             <audio id="quiz_audio" controls>
-                <source id="audio_src" src="placeholder" type="audio/mp3">
+                <source id="audio_src" src="../audio/chaffinch.mp3" type="audio/mp3">
                 Your browser does not support the audio element.
             </audio> 
             <button id="get-a-hint">Get a Hint</button>
@@ -67,8 +70,7 @@
                 <h3 id="name_6">Starling</h3>
                 <img src="../images/starling.jpg" alt="" class="bird" id="img_6">               
             </div>
-        </section>
-        
+        </section>      
     </main>
     <footer>
         <div>
@@ -79,6 +81,5 @@
             <a href="https://www.rspb.org.uk/" id="RSPB-logo"><img src="../images/RSPB_logo.PNG" height="50px" alt="Logo of the Royal Society For The Protection Of Birds"></a>          
         </div>     
     </footer> 
-    <div></div>
 </body>
 </html>

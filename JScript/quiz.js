@@ -98,8 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
     birds.splice(birds.indexOf(main_bird), 1);
 
     //load the main bird audio file to the page
-    document.getElementById('audio_src').src=main_bird.audio;
+    //document.getElementById('audio_src').src=main_bird.audio;
     console.log(main_bird.audio)
+    
     
 
     //Get the difficulty of the page
@@ -130,6 +131,38 @@ document.addEventListener('DOMContentLoaded', () => {
         populate_grid(elected_birds, "img_8", "name_8");
         populate_grid(elected_birds, "img_9", "name_9");
     }
+
+
+    const select_birds = document.getElementsByClassName("bird");
+
+    for (const bird of select_birds) {
+        bird.addEventListener('click', function check_selection(clicked_bird) {
+            const img_id = document.getElementById(clicked_bird.target.id).id
+            console.log(main_bird.name)
+            console.log(img_id)
+            if (img_id == main_bird.name) {
+                const parent_node = document.getElementById("parent")
+                const old_node = document.getElementById("instruction")
+                const new_node = document.createElement('img')
+                new_node.setAttribute('src', main_bird.large_img)
+                new_node.setAttribute('id', "learn-bird")
+                parent_node.replaceChild(new_node, old_node)
+                new_node.style.display = "flex"
+                new_node.style.marginLeft = "auto"
+                new_node.style.marginRight = "auto"
+                new_node.style.marginTop = "20px"
+                new_node.style.marginBottom = "20px"
+                alert("Well Done! You got it right. Try another one.")
+            } else {
+                alert("Thats not the one. Try the next one.")
+            }
+            
+          
+        });
+      }
+
+      
+
     
     
     function get_random_bird_from(array) {
@@ -149,16 +182,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function populate_grid(list, img_id, name_id) {
-            let random_index = Math.floor(Math.random() * list.length);
-            let random_bird = list[random_index];
-            //set the bird image
-            let bird_img = document.getElementById(img_id);
-            bird_img.setAttribute('src', random_bird.small_img);
-            //set the bird name     
-            let bird_name = document.getElementById(name_id);
-            bird_name.textContent = random_bird.name;
-            //console.log(bird_name.textContent)
-            list.splice(random_index, 1);    
-        }
+        let random_index = Math.floor(Math.random() * list.length);
+        let random_bird = list[random_index];
+        //set the bird image
+        let bird_img = document.getElementById(img_id);
+        bird_img.setAttribute('src', random_bird.small_img);
+        bird_img.setAttribute('id', random_bird.name);
+        //document.getElementById("demo").id = "newid";
+        //set the bird name     
+        let bird_name = document.getElementById(name_id);
+        bird_name.textContent = random_bird.name;
+        //console.log(bird_name.textContent)
+        list.splice(random_index, 1);    
+    }
 
 })    
