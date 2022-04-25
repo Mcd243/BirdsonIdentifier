@@ -24,7 +24,7 @@ const chaffinch = {
 const goldfinch = {
     name: "Goldfinch",
     large_img: "../images/goldfinch_sq.jpg",
-    small_img: "../images/goldfingch.jpg",
+    small_img: "../images/goldfinch.jpg",
     audio: "../audio/goldfinch.mp3"
 };
 
@@ -60,7 +60,7 @@ const starling = {
     name: "Starling",
     large_img: "../images/starling_sq.jpg",
     small_img: "../images/starling.jpg",
-    audio: "../audio/wood_starling.mp3"
+    audio: "../audio/starling.mp3"
 };
 
 const wood_pigeon = {
@@ -70,7 +70,7 @@ const wood_pigeon = {
     audio: "../audio/wood_pigeon.mp3"
 };
 
-const birds = [
+let birds = [
     robin,
     blackbird,
     chaffinch,
@@ -83,169 +83,153 @@ const birds = [
     wood_pigeon,
 ]
 
-let main_birds = [...birds]
 
-let populate_birds = []
+
 
 document.addEventListener('DOMContentLoaded', () => {
-
+    let main_birds = [...birds];
+    
+    let elected_birds = [];
+    //Get the difficulty of the page
     const difficulty = document.getElementById("selected_difficulty").innerHTML;
+    
+    let main_bird = initialize(main_birds)
+    console.log(main_bird)
+    populate_page(birds, elected_birds)
+    let select_birds = document.getElementsByClassName("bird");
 
-
-    if (difficulty == "Easy") {
-        // get main bird
-        select_random(1,birds, populate_birds)
-        const main_bird = populate_birds[0];
-        // remove from main birds
-        main_birds.splice(main_bird, 1); 
-        select_random(2, birds, populate_birds);
-        
-        
-        //randomize the selection
-        populate_grid(populate_birds, "img_1", "name_1")
-        populate_grid(populate_birds, "img_2", "name_2")
-        populate_grid(populate_birds, "img_3", "name_3")
-        
-
-
-    }else if (difficulty == "Medium") {
-        select_random(1,birds, populate_birds)
-        const main_bird = populate_birds[0];
-        // remove from main birds
-        main_birds.splice(main_bird, 1); 
-        select_random(5, birds, populate_birds);
-        //randomize the selection
-        populate_grid(populate_birds, "img_1", "name_1");
-        populate_grid(populate_birds, "img_2", "name_2");
-        populate_grid(populate_birds, "img_3", "name_3");
-        populate_grid(populate_birds, "img_4", "name_4");
-        populate_grid(populate_birds, "img_5", "name_5");
-        populate_grid(populate_birds, "img_6", "name_6");
-
-    }else {
-        select_random(1,birds, populate_birds)
-        const main_bird = populate_birds[0];
-        // remove from main birds
-        main_birds.splice(main_bird, 1); 
-        select_random(8, birds, populate_birds);
-        //randomize the selection
-        populate_grid(populate_birds, "img_1", "name_1");
-        populate_grid(populate_birds, "img_2", "name_2");
-        populate_grid(populate_birds, "img_3", "name_3");
-        populate_grid(populate_birds, "img_4", "name_4");
-        populate_grid(populate_birds, "img_5", "name_5");
-        populate_grid(populate_birds, "img_6", "name_6");
-        populate_grid(populate_birds, "img_7", "name_7");
-        populate_grid(populate_birds, "img_8", "name_8");
-        populate_grid(populate_birds, "img_9", "name_9");
+    for (const bird of select_birds) {        
+        bird.addEventListener('click', check_selection(bird, main_bird, main_birds, birds, elected_birds))
+        //console.log(bird.id)
     }
-      
-    //pick a random bird and add it to a list
-    function select_random(times, array, push_array) {
-        //repeat the prcess x times
-        for (let step = 0; step < times; step++) {
-            //pick a random bird
-            let random_index = Math.floor(Math.random() * array.length);
-            let random_bird = array[random_index];
-            if (!(push_array.includes(random_bird))) {
-                // if the bird is in the list add the bird to push array 
-                push_array.push(random_bird);
-                console.log(push_array)
-                //remove the bird from birds array
-                birds.splice(random_bird, 1);       
-            /*}else{    
-                let random_index = Math.floor(Math.random() * array.length);
-                let random_bird = array[random_index];  
-                // if the bird is in the list add the bird to push array 
-                push_array.push(random_bird);
-                console.log(push_array, "else")
-                //remove the bird from birds array
-                birds.splice(random_bird, 1);*/
-            }                 
-        }       
-    };
 
+    function check_selection(clicked_bird, main_bird) {
+        //console.log(clicked_bird)
+        var img_id = document.getElementById(clicked_bird.id).id
+        
+        if (img_id == main_bird.name) {
+            const parent_node = document.getElementById("parent")
+            const old_node = document.getElementById("instruction")
+            const new_node = document.createElement('img')
+            new_node.setAttribute('src', main_bird.large_img)
+            new_node.setAttribute('id', "learn-bird")
+            parent_node.replaceChild(new_node, old_node)
+            new_node.style.display = "flex"
+            new_node.style.marginLeft = "auto"
+            new_node.style.marginRight = "auto"
+            new_node.style.marginTop = "20px"
+            new_node.style.marginBottom = "20px"
+            alert("Well Done! You got it right. Try another one.")
 
-    //randomly put on the page/////////
-    function populate_grid(list, img_id, name_id) {
-        for (let step = 0; step < list.length; step++) {
-            //console.log(list)
-            //pick a random bird
-            let random_index = Math.floor(Math.random() * list.length);
-            //console.log(random_index);
-            let random_bird = list[random_index];
-            //console.log(random_bird);
-            //set the bird image
-            let bird_img = document.getElementById(img_id);
-            bird_img.setAttribute('src', random_bird.small_img);
-            //console.log(bird_img)
-            //set the bird name     
-            let bird_name = document.getElementById(name_id);
-            bird_name.textContent = random_bird.name;
-            //console.log(bird_name.textContent)
-            list.splice(random_index, 1);    
+            var main_bird = initialize(main_birds)
+            //console.log(main_bird)
+            populate_page(birds, elected_birds)
+            var select_birds = document.getElementsByClassName("bird");
+
+            for (const bird of select_birds) {
+                //console.log(bird.id)
+                bird.addEventListener('click', check_selection(bird, main_bird, main_birds, birds, elected_birds))
+            }
+
         }
         
-        
+                 
+        if (!(img_id == main_bird.name)) {
+            alert("Thats not the one. Try the next")
+
+            var main_bird = initialize(main_birds)
+            console.log(main_bird)
+            populate_page(birds, elected_birds)
+            var select_birds = document.getElementsByClassName("bird");
+
+            for (const bird of select_birds) {
+                console.log(bird.id)
+                bird.addEventListener('click', check_selection(bird, main_bird, main_birds, birds, elected_birds))
+            }
+
+        }
+      
+ 
+    };
+
+    function initialize(main_birds) {
+        //Detemine main bird
+        var main_bird = get_random_bird_from(main_birds);
+        //add main bird to elected birds
+        elected_birds.push(main_bird);
+        //remove from main birds
+        main_birds.splice(main_birds.indexOf(main_bird), 1);
+        birds.splice(birds.indexOf(main_bird), 1);
+
+        //load the main bird audio file to the page
+        //document.getElementById('audio_src').src=main_bird.audio;
+        console.log(main_bird.audio)
+
+        return main_bird
     }
 
 
-   
 
-
-    //get a random bird from birds
-        //add audio file to page
-        //get memkey from storage
+      
+    function populate_page(birds, elected_birds, difficulty) {
         
-
-    //remove bird from list
-
-    // if easy pick 2 birds add to list
-        //add 3 birds to grid 
-        //event listener click
-
-    // if easy pick 5 birds add to list
-        //add 6 birds to grid
-        //event listener click
-
-    // if easy pick 8 birds add to list
-        //add 9 birds to grid
-        //event listener click
-
-    //if get hint button pressed 
-        ////add memkey to page 
-
-    //if chosen bird == selected bird
-        //display popup "correct"
-        //add one to counter
-
-    //else 
-        //display popup "wrong "
-
-    //if page is medium birdlist is empty 
-        //display correct counter out of 10
-        //if correct counter <= 3
-            //keep trying
-        //elif correct counter >3  
-            //very good try hard
+        if (difficulty == "Easy") {
+            get_unique_birds(3, birds, elected_birds);
+            populate_grid(elected_birds, "img_1", "name_1")
+            populate_grid(elected_birds, "img_2", "name_2")
+            populate_grid(elected_birds, "img_3", "name_3")
+        } else if (difficulty == "Medium") {
+            get_unique_birds(5, birds, elected_birds); 
+            populate_grid(elected_birds, "img_1", "name_1");
+            populate_grid(elected_birds, "img_2", "name_2");
+            populate_grid(elected_birds, "img_3", "name_3");
+            populate_grid(elected_birds, "img_4", "name_4");
+            populate_grid(elected_birds, "img_5", "name_5");
+            populate_grid(elected_birds, "img_6", "name_6");
             
-
-    //if page is hard birdlist is empty 
-        //display correct counter out of 10
-        //if correct counter <= 5
-            //keep trying or try medium
-        //elif correct counter >5  
-            //very good keep going
-        //els
-        
-
-
-
+        } else {
+            get_unique_birds(8, birds, elected_birds);
+            populate_grid(elected_birds, "img_1", "name_1");
+            populate_grid(elected_birds, "img_2", "name_2");
+            populate_grid(elected_birds, "img_3", "name_3");
+            populate_grid(elected_birds, "img_4", "name_4");
+            populate_grid(elected_birds, "img_5", "name_5");
+            populate_grid(elected_birds, "img_6", "name_6");
+            populate_grid(elected_birds, "img_7", "name_7");
+            populate_grid(elected_birds, "img_8", "name_8");
+            populate_grid(elected_birds, "img_9", "name_9");
+        }
+    }
     
-
-
     
+    function get_random_bird_from(array) {
+        let random_index = Math.floor(Math.random() * array.length);
+        let random_bird = array[random_index];
+        return random_bird;         
+    }
 
+    function get_unique_birds(times, array, push_array) {
+        for (let step = 0; step < times; step++) {
+            let bird = get_random_bird_from(birds);
+            //add bird to elected birds
+            push_array.push(bird);
+            //remove from birds
+            array.splice(array.indexOf(bird), 1);  
+        }
+    }
 
-
+    function populate_grid(list, img_id, name_id) {
+        var random_index = Math.floor(Math.random() * list.length);
+        var random_bird = list[random_index];
+        //set the bird image
+        var bird_img = document.getElementById(img_id);
+        bird_img.setAttribute('src', random_bird.small_img);
+        bird_img.setAttribute('id', random_bird.name);
+        console.log(bird_img)
+        //set the bird name     
+        let bird_name = document.getElementById(name_id);
+        bird_name.textContent = random_bird.name;
+        //console.log(bird_name.textContent)
+        list.splice(random_index, 1);    
+    }
 })    

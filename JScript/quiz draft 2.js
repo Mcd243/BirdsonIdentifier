@@ -104,9 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     birds.splice(birds.indexOf(main_bird), 1);
 
     //load the main bird audio file to the page
-    console.log(main_bird)
-    let bird_song = document.getElementById("quiz_audio"); 
-    bird_song.src = main_bird.audio 
+    //document.getElementById('audio_src').src=main_bird.audio;
 
     //Get the difficlty and elect birds for the page
     const difficulty = document.querySelector("#selected_difficulty").innerHTML;
@@ -157,8 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.getElementById("instruction").appendChild(node);
                 }
                 //When the main_birds list is empty report the score
-                console.log(main_birds.length)
-                if (main_birds.length > 0) {
+                if (main_birds > 0) {
                     //repopulate birds
                     birds = [...origin];
                     main_bird = get_random_bird_from(main_birds);
@@ -166,15 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     main_birds.splice(main_birds.indexOf(main_bird), 1);
                     birds.splice(birds.indexOf(main_bird), 1);
                     //repopulate according to difficulty
-
-                    //load the main bird audio file to the page
-                    console.log(main_bird)
-                    let bird_song = document.getElementById("quiz_audio"); 
-                    bird_song.src = main_bird.audio 
-
                     set_difficulty(difficulty, birds, elected_birds )
-                    populate_grid(elected_birds) 
-
+                    populate_grid(elected_birds)                   
                 } else {
                     //report the score
                     if (difficulty == "Easy") {
@@ -219,80 +209,26 @@ document.addEventListener('DOMContentLoaded', () => {
                         }else{
                             alert("WELL DONE! You have completed this QUIZ. Your score is " + score + " out of 10. Try doing the quiz on MEDIUM to improve your skills")
                             window.location.reload()
-
                         }
+
                     }
                 }
                 
-            }else if (!(img_id == main_bird.name)) {
+            }
+                       
+            else if (!(img_id == main_bird.name)) {
 
                 alert("Thats not the one. Try the next")
 
-                if (main_birds.length > 0) {
-                    //repopulate birds
-                    birds = [...origin];
-                    main_bird = get_random_bird_from(main_birds);
-                    elected_birds.push(main_bird);
-                    main_birds.splice(main_birds.indexOf(main_bird), 1);
-                    birds.splice(birds.indexOf(main_bird), 1);
-                    //repopulate according to difficulty
-
-                    //load the main bird audio file to the page
-                    console.log(main_bird)
-                    let bird_song = document.getElementById("quiz_audio"); 
-                    bird_song.src = main_bird.audio 
-
-                    set_difficulty(difficulty, birds, elected_birds )
-                    populate_grid(elected_birds) 
-
-                } else {
-                    //report the score
-                    if (difficulty == "Easy") {
-                        if (score == 10) {
-                            alert("WELL DONE! You have completed this QUIZ with FLYING STARS. Your score is " + score + " out of 10. Try doing the quiz on MEDIUM difficulty")
-                            window.location.reload()
-                        
-                        }else if (score >= 5) {
-                            alert("WELL DONE! You have completed this QUIZ. Your score is " + score + " out of 10. You are doing well. Try this quiz again")
-                            window.location.reload()
-
-                        }else{
-                            alert("WELL DONE! You have completed this QUIZ. Your score is " + score + " out of 10. Try going back to the learn section to improve your skills")
-                            window.location.reload()
-
-                        }
-
-                    }else if (difficulty == "Medium") {
-                        if (score == 10) {
-                            alert("WELL DONE! You have completed this QUIZ with FLYING STARS. Your score is " + score + " out of 10. Try doing the quiz on HARD")
-                            window.location.reload()
-
-                        
-                        }else if (score >= 5) {
-                            alert("WELL DONE! You have completed this QUIZ. Your score is " + score + " out of 10. You are doing well. Try this quiz again")
-                            window.location.reload()
-
-                        }else{
-                            alert("WELL DONE! You have completed this QUIZ. Your score is " + score + " out of 10. Try doing the quiz on EASY to improve your skills")
-                            window.location.reload()
-
-                        }
-                    }else{
-                        if (score == 10) {
-                            alert("WELL DONE! You have completed this QUIZ with FLYING STARS. Your score is " + score + " out of 10. You are a BOSS!!. Go outside and sing to the birds!!")
-                            window.location.reload()
-                        
-                        }else if (score >= 5) {
-                            alert("WELL DONE! You have completed this QUIZ. Your score is " + score + " out of 10. You are doing well. Try this quiz again")
-                            window.location.reload()
-
-                        }else{
-                            alert("WELL DONE! You have completed this QUIZ. Your score is " + score + " out of 10. Try doing the quiz on MEDIUM to improve your skills")
-                            window.location.reload()
-
-                        }
-                    }
-                }
+                //repopulate birds
+                birds = [...origin];
+                main_bird = get_random_bird_from(main_birds);
+                elected_birds.push(main_bird);
+                main_birds.splice(main_birds.indexOf(main_bird), 1);
+                birds.splice(birds.indexOf(main_bird), 1);
+                //repopulate according to difficulty
+                set_difficulty(difficulty, birds, elected_birds )
+                populate_grid(elected_birds)
      
             }
            
