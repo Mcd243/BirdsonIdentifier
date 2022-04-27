@@ -22,7 +22,8 @@ button {
     border-radius: 10px;
     border-style: solid;
     color: white;
-    background-color: #d1661e;
+    background-color: #868547;
+    box-shadow: 5px 3px 3px rgb(24, 32, 20), 5px 3px 3px rgb(24, 32, 20);
 }
 
 a {
@@ -51,8 +52,8 @@ a {
 }
 
 #index-main {
-    display: grid;
-    grid-template-columns: 450px 450px;
+    display: flexbox;
+    
 }
 
 #index-header {
@@ -65,9 +66,10 @@ a {
 }
 
 #sections {
-    grid-column-start: 2; 
-    width: 100%;
-    margin-bottom: 150px;      
+    float:right; 
+    width: 400px;
+    margin-right:200px;
+    margin-bottom: 150px;     
 }
 
 .home_button {
@@ -78,8 +80,8 @@ a {
     margin-top: 30px;
 }
 
-/*Responsive changes 890px*/
-@media only screen and (max-width: 890px) {
+/*Responsive changes 1025px*/
+@media only screen and (max-width: 1025px) {
     #index-body {
         display: grid;
         background-image: url("../images/robincut.PNG");
@@ -91,17 +93,24 @@ a {
     }
     
     #index-main {
-        display: grid;
-        grid-template-columns: 200px 350px;
+        display: flexbox;
+       
     }
            
     .home_button {
         margin-left: 100px;   
     }
+
+    #sections {
+        float:right; 
+        width: 400px;
+        margin-right:10%;
+        margin-bottom: 150px;     
+    }
 }
 
 /*Responsive changes for smartphones at 550px*/
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 650px) {
     body {
          font-size: .8rem;
     }

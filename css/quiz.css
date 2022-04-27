@@ -20,7 +20,8 @@ button {
     border-radius: 10px;
     border-style: solid;
     color: white;
-    background-color: #d1661e;
+    background-color: #868547;
+    box-shadow: 5px 3px 3px rgb(24, 32, 20), 5px 3px 3px rgb(24, 32, 20);
 }
 
 a {
@@ -54,7 +55,7 @@ nav {
     width: 150px;
     color: white;
     border-color: white;
-    background-color: #d1661e;
+    background-color: #868547;
     border-style: solid;
     border-width: 1px;
     margin: 10px;
@@ -63,8 +64,8 @@ nav {
 
 #current-page {
     border-color: #535340;
-    background-color: #383827;
-    box-shadow: 5px 3px 3px rgb(24, 32, 20), 5px 3px 3px rgb(24, 32, 20);
+    background-color: #d1661e;
+    box-shadow: 1px 1px 1px rgb(24, 32, 20), 1px 1px 1px rgb(24, 32, 20);
 }
 
 /*Main Container*/
@@ -139,11 +140,26 @@ h2 {
 
 .grid-container {
     width: 650px;
-    height: 700px;
+    height: 550px;
     margin-left: auto;
     margin-right: auto;
     display: grid;
     grid-template-columns: auto auto auto;
+}
+
+#easy_grid {
+    height: 450px;
+    margin-bottom: 125px;
+}
+
+#medium_grid {
+    height: 450px;
+    margin-bottom: 125px;
+}
+
+#hard_grid {
+    height: 500px;
+    margin-bottom: 75px;
 }
 
 .bird {
@@ -239,31 +255,19 @@ audio {
 
 #selected_difficulty {
     border-color: #535340;
-    background-color: #383827;
-    box-shadow: 5px 3px 3px rgb(24, 32, 20), 5px 3px 3px rgb(24, 32, 20);
-}
-
-#easy_grid {
-    height: 200px;
-}
-
-#medium_grid {
-    height: 300px;
-    margin-bottom: 40px;
-}
-
-#hard_grid {
-    margin-bottom: 40px;
+    background-color: #d1661e;
+    box-shadow: 1px 1px 1px rgb(24, 32, 20), 1px 1px 1px rgb(24, 32, 20);
+    
 }
 
 /*Footer Container*/
-
 footer {
     display: grid;
     grid-template-columns: auto auto ;
     padding: 20px;
     background-color: #868547;
-    color: #2c2c1d;
+    color: #2c2c1d;   
+    height: 200px;
 }
 
 #RSPB {
@@ -355,7 +359,7 @@ footer {
 
     #learn-bird {
         height: 200px;
-        width: 100%;
+    
     }
 
     #learn-more-button {

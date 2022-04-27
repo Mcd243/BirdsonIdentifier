@@ -12,11 +12,9 @@
 </head>
 <body>
     <header>
-        <nav>
-            <a href="index.html" id="logo-container"><img id="" src="../images/bird_logo.PNG" alt="Robbin logo"
-                    height="90px">
-                <h1>Birdsong Identifier</h1>
-            </a>
+        <nav>  
+            <a href="index.html" id="logo-container"><img id="" src="../images/bird_logo.PNG" alt="Robbin logo" height="90px" >
+                <h1>Birdsong Identifier</h1></a>
             <div id="nav-button-container">
                 <a href="learn_robin.html"><button class="nav-button">Learn</button></a>
                 <button class="nav-button" id="current-page">Quiz</button>
@@ -26,12 +24,11 @@
     <main>
         <section class="quiz-intro">
             <p class="intro">Lets test your skills.
-                <br>First choose your difficulty level.
-            </p>
+            <br>First choose your difficulty level.</p>
             <button class="difficulty" id="selected_difficulty">Easy</button>
             <a href="quiz_medium.html"><button class="difficulty" id="Medium">Medium</button></a>
             <a href="quiz_hard.html"><button class="difficulty" id="Hard">Hard</button></a>
-        </section>
+        </section>    
         <section id="parent"> 
             <div class="interact-container" id="instruction">
                 <p id="instruct-text">Click on the audio player to listen to a birdsong. Then select the bird from
@@ -44,24 +41,24 @@
             <audio id="quiz_audio" controls>
                 <source src="../audio/chaffinch.mp3" type="audio/mp3">
                 Your browser does not support the audio element.
-            </audio>
+            </audio> 
             <button id="get-a-hint">Get a Hint</button>
             <P id="mem_key" hidden>Big Kuchunga</P>
         </div>
-        <section class="grid-container" id="easy_grid">
-            <div class="grid-item" >
-                <h3 id="name_1">Robbin</h3>
+        <section class="grid-container" id="easy_grid">    
+            <div class="grid-item" id="item_1">
+                <h3 class="name">Robbin</h3>
                 <img src="../images/robin.jpg" alt="" class="bird" id="img_1">
             </div>
-            <div class="grid-item" id="2">
-                <h3 id="name_2">Blackbird</h3>
-                <img src="../images/blackbird.jpg" alt="" class="bird" id="img_2">
+            <div class="grid-item" id="item_2">
+                <h3 class="name">Blackbird</h3>
+                <img src="../images/blackbird.jpg" alt="" class="bird" id="img_2">                
             </div>
-            <div class="grid-item" id="3">
-                <h3 id="name_3">Great Tit</h3>
-                <img src="../images/great_tit.jpg" alt="" class="bird" id="img_3">
+            <div class="grid-item" id="item_3">
+                <h3 class="name">Great Tit</h3>
+                <img src="../images/great_tit.jpg" alt="" class="bird" id="img_3">            
             </div>
-        </section>
+        </section>      
     </main>
     <footer>
         <div>
@@ -73,5 +70,4 @@
         </div>     
     </footer> 
 </body>
-
 </html>

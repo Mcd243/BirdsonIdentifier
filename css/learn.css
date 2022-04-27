@@ -22,7 +22,8 @@ button {
     border-radius: 10px;
     border-style: solid;
     color: white;
-    background-color: #d1661e;
+    background-color: #868547;
+    box-shadow: 5px 3px 3px rgb(24, 32, 20), 5px 3px 3px rgb(24, 32, 20);
 }
 
 a {
@@ -56,7 +57,7 @@ nav {
     width: 150px;
     color: white;
     border-color: white;
-    background-color: #d1661e;
+    background-color: #868547;
     border-style: solid;
     border-width: 1px;
     margin: 10px;
@@ -65,8 +66,8 @@ nav {
 
 #current-page {
     border-color: #535340;
-    background-color: #383827;
-    box-shadow: 5px 3px 3px rgb(24, 32, 20), 5px 3px 3px rgb(24, 32, 20);
+    background-color: #d1661e;
+    box-shadow: 1px 1px 1px rgb(24, 32, 20), 1px 1px 1px rgb(24, 32, 20);
 }
 
 /*Main Container*/
@@ -133,10 +134,11 @@ h2 {
     margin-top: 30px;
     margin-bottom: 20px;
     width: 400px;
-    background-color: #d1661e;
+    background-color: #868547;
     color: white;
     height: 50px;
     font-size: large;
+    box-shadow: 5px 3px 3px rgb(24, 32, 20), 5px 3px 3px rgb(24, 32, 20);
 }   
 
 #next  {
@@ -148,9 +150,10 @@ h2 {
     border-width: 2px;
     border-color: white;
     color: white;
-    background-color: #d1661e; 
+    background-color: #868547; 
     padding-left: 40%;
     padding-top: 10px;
+    box-shadow: 5px 3px 3px rgb(24, 32, 20), 5px 3px 3px rgb(24, 32, 20);
 }
 
 
