@@ -175,7 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     //repopulate birds
                     birds = [...origin];
                     main_bird = get_random_bird_from(main_birds);
-                    console.log(main_bird)
                     elected_birds.push(main_bird);
                     main_birds.splice(main_birds.indexOf(main_bird), 1);
                     birds.splice(birds.indexOf(main_bird), 1);
@@ -184,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     //load the main bird audio file to the page
                     let bird_song = document.getElementById("quiz_audio"); 
                     bird_song.src = main_bird.audio; 
-                    console.log(bird_song)
 
                     set_difficulty(difficulty, birds, elected_birds);
                     populate_grid(elected_birds); 
