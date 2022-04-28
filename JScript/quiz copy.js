@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function set_difficulty(difficulty, from_array, to_array) {
         if (difficulty == "Easy") {
-            get_unique_birds(2, from_array, to_array);
+            get_unique_birds(3, from_array, to_array);
         } else if (difficulty == "Medium") {
             get_unique_birds(5, from_array, to_array);
         } else {
